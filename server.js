@@ -3,7 +3,7 @@ console.log('test')
 var data={
     "name": "Mousa Khaleel",
     "age": "21",
-    "feild": "software engeneering"
+    "feild": "Software Engineering"
 }
 var products={
     p1:{

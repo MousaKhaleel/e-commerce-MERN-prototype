@@ -1,0 +1,14 @@
+.cont{
+    width: 10%;
+    margin-top: 10%;
+    padding: 2%;
+    margin-inline: 1%;
+    background: rgba(239, 239, 235, 0.477);
+}
+.cont p{
+    margin-top: 10%;
+}
+.main{
+    display: flex;
+    justify-content: center;
+}
