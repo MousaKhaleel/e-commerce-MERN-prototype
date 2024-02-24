@@ -19,6 +19,16 @@ var products={
     "price": "40"
     }
 }
+// ///////////////////////////////////////////////////////
+
+const {MongoClient}=require('mongodb')
+var connection="mongodb+srv://user1:qwe12345678@cluster0.1ogr7io.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const client= new MongoClient(connection)
+
+const mydb= client.db('test')
+
+const collection= mydb.collection('Users')
+
 // ///////////////////////////////////////////////
 
 const express= require('express');
@@ -36,6 +46,16 @@ app.get('/getData',function(req,res)
 {
     res.json(data)
     // res.send('server started'); return json name age swe
+});
+app.get('/users',async(req,res)=>
+{
+    const data= await collection.find({}).toArray()
+    res.send(data)
+});
+app.get('/user/:name',async(req,res)=>
+{
+    const data= await collection.findOne({'username':req.params.name})
+    res.send(data)
 });
 
 app.get('/getPrice',function(req,res)
