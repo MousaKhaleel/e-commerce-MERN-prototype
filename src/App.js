@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import SetProduct from './components/Product';
-import UseFetch from './components/UseFetch';
+import useFetch from './components/useFetch';
 import SetUser from './components/User';
 import earbuds from './assets/37-random-products-that-we-love_31.jpg';
 import usb from './assets/SwiftRNG-cleanedup.jpg';

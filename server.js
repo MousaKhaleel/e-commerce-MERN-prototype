@@ -5,28 +5,52 @@ var data={
     "age": "21",
     "feild": "Software Engineering"
 }
-var products={
-    p1:{
+var products=[
+    {
     "price": "10",
     "color": "blue",
     "pic": "earbuds"
     },
-    p2:{
+    {
     "price": "20",
     "color": "yellow",
     "pic": "usb"
     },
-    p3:{
+    {
     "price": "30",
     "color": "grey",
     "pic": "charger"
     },
-    p4:{
+    {
     "price": "40",
     "color": "red",
     "pic": "idk"
     }
-}
+]
+// var products={
+//     "product":[
+//     {
+//     "price": "10",
+//     "color": "blue",
+//     "pic": "earbuds"
+//     },
+//     {
+//     "price": "20",
+//     "color": "yellow",
+//     "pic": "usb"
+//     },
+//     {
+//     "price": "30",
+//     "color": "grey",
+//     "pic": "charger"
+//     },
+//     {
+//     "price": "40",
+//     "color": "red",
+//     "pic": "idk"
+//     }
+// ]
+// }
 // ///////////////////////////////////////////////////////
 
 const {MongoClient}=require('mongodb')
