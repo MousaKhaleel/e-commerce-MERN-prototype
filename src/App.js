@@ -1,28 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
 import SetProduct from './components/SetProduct';
-import FetchData from './components/FetchData';
+import UseFetch from './components/UseFetch';
 import SetUser from './components/SetUser';
 import earbuds from './assets/37-random-products-that-we-love_31.jpg';
 import usb from './assets/SwiftRNG-cleanedup.jpg';
 import charger from './assets/images (1).jpg';
 import idk from './assets/images.jpg';
-import productStyle from './productStyle.css'
+import './productStyle.css'
+import { useEffect, useReducer, useState } from 'react';
 
 function App() {
-  var price=FetchData('getPrice').toString()
+
+  const [user, setUser] = useState({});
+  const [price1, setPrice] = useState({});
+  var price=JSON.stringify(UseFetch('getPrice')).toString()
   price=price.split('"')
 
-  var user=FetchData('getData').toString()
-  user=user.split('"')
+  useEffect(() => {
+    fetch('http://localhost:8000/getData')
+    .then(res => res.json())
+    .then(data => setUser(data))
+    .catch(error => console.error(error))
+  }, []);
+
+
+  useEffect(()=>{
+    fetch('http://localhost:8000/getPrice')
+    .then(res => res.json())
+    .then(data => setPrice(data))
+    .catch(error => console.error(error))
+  },[])
+
+  const productComponents = Object.keys(price).map(product => (
+    <SetProduct price={price[product].price} color={price[product].color} pic={price[product].pic}/>
+  ));
+
   return (
     <div className="App">
-    <SetUser name={user[3]} age={user[7]} feild={user[11]} />
+    <SetUser name={user.name} age={user.age} feild={user.feild} />
     <div className='main'>
-      <SetProduct price={price[5]} color="blue" pic={earbuds} />
-      <SetProduct price={price[11]} color="yellow" pic={usb} />
-      <SetProduct price={price[17]} color="grey" pic={charger} />
-      <SetProduct price={price[23]} color="red" pic={idk} />
+    <SetProduct price={price[5]} color="blue" pic={earbuds} />
+      <SetProduct price={price[19]} color="yellow" pic={usb} />
+      <SetProduct price={price[33]} color="grey" pic={charger} />
+      <SetProduct price={price[47]} color="red" pic={idk} />
+    {/* {productComponents.length > 0 ? productComponents : <p>Loading...</p>} */}
     </div>
     </div>
   );

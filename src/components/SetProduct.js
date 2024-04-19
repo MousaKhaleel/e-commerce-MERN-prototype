@@ -1,5 +1,5 @@
 import React from "react";
-import productStyle from '../productStyle.css';
+import '../productStyle.css';
 
 class SetProduct extends React.Component {
   render() {

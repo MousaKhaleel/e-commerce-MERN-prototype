@@ -7,16 +7,24 @@ var data={
 }
 var products={
     p1:{
-    "price": "10"
+    "price": "10",
+    "color": "blue",
+    "pic": "earbuds"
     },
     p2:{
-    "price": "20"
+    "price": "20",
+    "color": "yellow",
+    "pic": "usb"
     },
     p3:{
-    "price": "30"
+    "price": "30",
+    "color": "grey",
+    "pic": "charger"
     },
     p4:{
-    "price": "40"
+    "price": "40",
+    "color": "red",
+    "pic": "idk"
     }
 }
 // ///////////////////////////////////////////////////////
