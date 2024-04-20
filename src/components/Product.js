@@ -1,7 +1,7 @@
 import React from "react";
 import './productStyle.css';
 
-class SetProduct extends React.Component {
+class Product extends React.Component {
   render() {
     return (
       <div className="cont" style={{ borderColor: this.props.color, borderWidth: '1px', borderStyle: 'solid' }}>
@@ -12,4 +12,4 @@ class SetProduct extends React.Component {
   }
 }
 
-export default SetProduct;
+export default Product;

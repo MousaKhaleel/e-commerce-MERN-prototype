@@ -10,46 +10,31 @@ import { useEffect, useState } from 'react';
 
 function HomePage() {
     const {data:user}=useFetch('getData')
-    // const [price1, setPrice] = useState({});
-    // var price=JSON.stringify(useFetch('getPrice')).toString()
-    // price=price.split('"')
     const {data:price}=useFetch('getPrice')
   console.log(price)
-  
-    // useEffect(()=>{
-    //   fetch('http://localhost:8000/getPrice')
-    //   .then(res => res.json())
-    //   .then(data => setPrice(data))
-    //   .catch(error => console.error(error))
-    // },[])
-  
-    // const productComponents = Object.keys(price).map(product => (
-    //   <Product price={price[product].price} color={price[product].color} pic={price[product].pic}/>
-    // ));
 
     return ( 
     <div>
         {user && <User name={user.name} age={user.age} feild={user.feild} />}
     <div className='main'>
-    {price &&
-    price.map((item, i)=>{
-        <Product key={i} price={item.price} color="blue" pic={earbuds} />
+    {/* {price &&
+    price.map((item)=>{
+        <Product price={item.price} color={item.color} pic={item.pic} />
     })
-    }
-    {/*
+    } */}
+    
      {price &&
         <Product price={price.p1.price} color="blue" pic={earbuds} />
     }
     {price &&
-        <Product price={price[19]} color="yellow" pic={usb} />
+        <Product price={price.p2.price} color="yellow" pic={usb} />
     }
     {price &&
-        <Product price={price[33]} color="grey" pic={charger} />
+        <Product price={price.p3.price} color="grey" pic={charger} />
     }
     {price &&   
-        <Product price={price[47]} color="red" pic={idk} />
-    } */}
-    {/* {productComponents.length > 0 ? productComponents : <p>Loading...</p>} */}
+        <Product price={price.p4.price} color="red" pic={idk} />
+    }
     </div>
         </div>
      );

@@ -1,6 +1,6 @@
 import React from "react";
 
-class SetUser extends React.Component {
+class User extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -15,4 +15,4 @@ class SetUser extends React.Component {
     }
 }
  
-export default SetUser;
+export default User;
